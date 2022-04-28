@@ -21,7 +21,11 @@ namespace dZapataOnlines2
         {
             string usuario = txtUsuario.Text;
             string password = txtPassword.Text;
-            await Navigation.PushAsync(new Page1(usuario, password));
+            if (usuario == "estudiante2022")
+            {
+                await Navigation.PushAsync(new Page1(usuario, password));
+            }
+            else { await DisplayAlert("Alert", "Uusario erroneó", "OK"); ; } 
         }
     }
 }
